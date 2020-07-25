@@ -31,5 +31,9 @@ def NPCs():
 
     return result
 
+@app.route("/Contact")
+def Contact():
+    return "IN PROGRESS"
+
 if __name__ == "__main__":
     app.run()
