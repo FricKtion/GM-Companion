@@ -1,3 +1,4 @@
 Create an encounter builder
     allow both monsters and NPCs from the Archives
 Add a page that lists identify DCs for each creature
+Include a link to archives
