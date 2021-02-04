@@ -1,102 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
+{% block title %}Home{% endblock %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Simple tools to make any PF2e GMs life just a little easier.">
-  <meta name="author" content="FricKtion">
+{% block content %}
+<div class="container">
 
-  <title>PF2e GM's Companion - Home</title>
+  <h1 class="my-4">Tools</h1>
 
-  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-
-  <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-business.css') }}">
-
-</head>
-
-<body>
-
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="{{ url_for('.Home') }}">PF2e GM's Companion</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container">
-
-    <h1 class="my-4">Tools</h1>
-
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Encounter Builder</h4>
-          <div class="card-body">
-            <p class="card-text">
-              Provides GMs the ability to tailor encounters to their party.
-              First select your party size then start adding creatures to
-              the encounter. The tool will automatically calculate the encounter
-              difficulty and XP to award. 
-              <br /><br />
-              Encounter difficulty/XP based on the Encounter Building rules found
-              <a href="https://2e.aonprd.com/Rules.aspx?ID=498" target="_blank">HERE</a> and 
-              <a href="https://2e.aonprd.com/Rules.aspx?ID=499" target="_blank">HERE</a>
-            </p>
-          </div>
-          <div class="card-footer text-center">
-            <a href="{{ url_for('encounters.Home') }}" class="btn btn-primary">Build</a>
-          </div>
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100">
+        <h4 class="card-header">Encounter Builder</h4>
+        <div class="card-body">
+          <p class="card-text">
+            Provides GMs the ability to tailor encounters to their party.
+            First select your party size then start adding creatures to
+            the encounter. The tool will automatically calculate the encounter
+            difficulty and XP to award. 
+            <br /><br />
+            Encounter difficulty/XP based on the Encounter Building rules found
+            <a href="https://2e.aonprd.com/Rules.aspx?ID=498" target="_blank">HERE</a> and 
+            <a href="https://2e.aonprd.com/Rules.aspx?ID=499" target="_blank">HERE</a>
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="{{ url_for('encounters.Home') }}" class="btn btn-primary">Build</a>
         </div>
       </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Creature Identification</h4>
-          <div class="card-body">
-            <p class="card-text">
-              Select a creature from the list to view its identification DC and the skill(s)
-              needed to identify it.
-              <br /><br/>
-              Identification information based on Creature Identification rules found 
-              <a href="https://2e.aonprd.com/Rules.aspx?ID=566" target="_blank">HERE</a>
-            </p>
-          </div>
-          <div class="card-footer text-center">
-            <a href="#" class="btn btn-primary">Identify</a>
-          </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100">
+        <h4 class="card-header">Creature Identification</h4>
+        <div class="card-body">
+          <p class="card-text">
+            Select a creature from the list to view its identification DC and the skill(s)
+            needed to identify it.
+            <br /><br/>
+            Identification information based on Creature Identification rules found 
+            <a href="https://2e.aonprd.com/Rules.aspx?ID=566" target="_blank">HERE</a>
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="#" class="btn btn-primary">Identify</a>
         </div>
       </div>
     </div>
   </div>
-
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">
-        This is a fan project and is in no way shape or form 
-        affiliated with Paizo Inc., Pathfinder, Pathfinder 2nd Edition,
-        nor any other Paizo product.
-      </p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-</body>
-
-</html>
+</div>
+{% endblock %}

@@ -6,7 +6,7 @@ bp = Blueprint('encounters', __name__, url_prefix='/encounterbuilder')
 
 @bp.route("/")
 def Home():
-    return 'I should put something here :)'
+    return render_template('/encounterbuilder/index.html')
 
 @bp.route("/monsters")
 def Monsters():
