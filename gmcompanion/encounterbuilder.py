@@ -1,13 +1,15 @@
-from flask import Flask, render_template
-from ArchivesScraper import ArchivesScraper
+from flask import render_template
+from flask import Blueprint
+from utils import ArchivesScraper
 
-app = Flask(__name__)
+bp = Blueprint('encounters', __name__, url_prefix='/encounterbuilder')
 
-@app.route("/")
-def Home():
-    return render_template("index.html")
+# TODO move this into a different Blueprint
+# @bp.route("/")
+# def Home():
+#     return render_template("index.html")
 
-@app.route("/Monsters")
+@bp.route("/monsters")
 def Monsters():
     scraper = ArchivesScraper()
     monsters = scraper.MonsterList()
@@ -19,7 +21,7 @@ def Monsters():
 
     return result
 
-@app.route("/NPCs")
+@bp.route("/npcs")
 def NPCs():
     scraper = ArchivesScraper()
     npcs = scraper.NpcList()
@@ -31,9 +33,6 @@ def NPCs():
 
     return result
 
-@app.route("/Contact")
-def Contact():
-    return "IN PROGRESS"
-
-if __name__ == "__main__":
-    app.run()
+# TODO is this needed in the init file?
+# if __name__ == "__main__":
+#     app.run()
