@@ -4,10 +4,9 @@ from utils import ArchivesScraper
 
 bp = Blueprint('encounters', __name__, url_prefix='/encounterbuilder')
 
-# TODO move this into a different Blueprint
-# @bp.route("/")
-# def Home():
-#     return render_template("index.html")
+@bp.route("/")
+def EncounterBuilderIndex():
+    return 'I should put something here :)'
 
 @bp.route("/monsters")
 def Monsters():
@@ -32,7 +31,3 @@ def NPCs():
         result += "<br />"
 
     return result
-
-# TODO is this needed in the init file?
-# if __name__ == "__main__":
-#     app.run()

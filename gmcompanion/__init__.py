@@ -23,6 +23,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    from . import home
+    app.register_blueprint(home.bp)
+
     from . import encounterbuilder
     app.register_blueprint(encounterbuilder.bp)
 
