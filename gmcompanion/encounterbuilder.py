@@ -5,7 +5,7 @@ from utils import ArchivesScraper
 bp = Blueprint('encounters', __name__, url_prefix='/encounterbuilder')
 
 @bp.route("/")
-def EncounterBuilderIndex():
+def Home():
     return 'I should put something here :)'
 
 @bp.route("/monsters")

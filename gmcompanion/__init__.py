@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask
+from datetime import datetime
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -22,6 +23,11 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    # Inject the date into all templates
+    @app.context_processor
+    def inject_now():
+        return {'now': datetime.utcnow()}
 
     from . import home
     app.register_blueprint(home.bp)
